@@ -56,7 +56,6 @@ int main()
             temp = temp->next;
         }
     }
-
     printLinkedList(head);
     return 0;
 }
