@@ -54,7 +54,7 @@ int main()
 
     cout << endl;
 
-    s.isEmpty();
+    cout << s.isEmpty();
 
     cout << endl;
 
