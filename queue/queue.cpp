@@ -22,4 +22,12 @@ int main()
     //      cout << q.front() << " ";
     //      q.pop();
     //  }
+
+    cout << "First element - " << q.front() << endl;
+
+    cout << "Last element - " << q.back() << endl;
+
+    cout << "Is Empty - " << q.empty() << endl;
+
+    cout << "Size - " << q.size() << endl;
 }
