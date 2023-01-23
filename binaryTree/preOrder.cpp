@@ -60,8 +60,19 @@ public:
 
     */
 
-    void inOrder(Node *root)
+    void preOrder(Node *root)
     {
+
+        if (root == NULL)
+        {
+            return;
+        }
+
+        preOrder(root->left);
+
+        cout << root->data << " ";
+
+        preOrder(root->right);
     }
 
 }; // End of Solution
@@ -83,6 +94,6 @@ int main()
         root = myTree.insert(root, data);
     }
 
-    myTree.inOrder(root);
+    myTree.preOrder(root);
     return 0;
 }
