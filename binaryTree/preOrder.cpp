@@ -68,9 +68,9 @@ public:
             return;
         }
 
-        preOrder(root->left);
-
         cout << root->data << " ";
+
+        preOrder(root->left);
 
         preOrder(root->right);
     }
