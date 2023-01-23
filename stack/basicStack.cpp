@@ -37,6 +37,7 @@ public:
 
     bool isEmpty()
     {
+        cout << "Is Empty --> ";
         return end;
     }
 };
