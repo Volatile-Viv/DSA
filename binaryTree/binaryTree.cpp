@@ -1,52 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class node
+class Node
 {
 public:
-    int val;
-    node *left;
-    node *right;
+    int data;
+    Node *left;
+    Node *right;
 
-    node(int d)
+    Node(int d)
     {
-        val = d;
+        data = d;
         left = NULL;
         right = NULL;
     }
 };
 
-node *create(node *root)
+void levelOrderTraversal(Node *root)
 {
-
-    cout << "Enter the data: ";
-    int data;
-    cin >> data;
-    root = new node(data);
-
-    if (data == -1)
-    {
-        return NULL;
-    }
-
-    cout << "Enter data for inserting in left of " << data << endl;
-    root->left = create(root->left);
-
-    cout << "Enter data for inserting in right of " << data << endl;
-    root->right = create(root->right);
-
-    return NULL;
-}
-
-void levelOrderTraversal(node *root)
-{
-    queue<node *> q;
+    queue<Node *> q;
     q.push(root);
     q.push(NULL);
 
     while (!q.empty())
     {
-        node *temp = q.front();
+        Node *temp = q.front();
         q.pop();
 
         if (temp == NULL)
@@ -59,25 +37,24 @@ void levelOrderTraversal(node *root)
         }
         else
         {
-            cout << temp->val << " ";
+            cout << temp->data << " ";
+
             if (temp->left)
-            {
                 q.push(temp->left);
-            }
 
             if (temp->right)
-            {
                 q.push(temp->right);
-            }
         }
     }
 }
 
 int main()
 {
-    node *root = NULL;
-
-    create(root);
+    Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
 
     levelOrderTraversal(root);
 }
