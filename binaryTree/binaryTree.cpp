@@ -16,6 +16,26 @@ public:
     }
 };
 
+Node *create()
+{
+    int d;
+    cout << "Enter the data: ";
+    cin >> d;
+    if (d == -1)
+    {
+        return NULL;
+    }
+    Node *root = new Node(d);
+
+    cout << "Enter the data for left of " << d << ": " << endl;
+    root->left = create();
+
+    cout << "Enter the data for right of " << d << ": " << endl;
+    root->right = create();
+
+    return root;
+}
+
 void levelOrderTraversal(Node *root)
 {
     queue<Node *> q;
@@ -50,11 +70,11 @@ void levelOrderTraversal(Node *root)
 
 int main()
 {
-    Node *root = new Node(1);
-    root->left = new Node(2);
-    root->right = new Node(3);
-    root->left->left = new Node(4);
-    root->left->right = new Node(5);
+    Node *root = create();
+    // root->left = new Node(2);
+    // root->right = new Node(3);
+    // root->left->left = new Node(4);
+    // root->left->right = new Node(5);
 
     levelOrderTraversal(root);
 }
