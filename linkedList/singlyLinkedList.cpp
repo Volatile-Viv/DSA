@@ -26,16 +26,18 @@ Node *insertAtTail(int val)
     return temp;
 }
 
-Node *insertAtPosition(Node *head, int pos, int val)
+void insertAtPosition(Node *head, int pos, int val)
 {
     Node *temp = new Node();
     temp->data = val;
 
     while (--pos)
     {
+        head = head->next;
     }
 
-    return temp;
+    temp->next = head->next;
+    head->next = temp;
 }
 
 void traverse(Node *head)
@@ -77,6 +79,14 @@ int main()
             tail = tail->next;
         }
     }
+
+    traverse(head);
+
+    cout << endl;
+
+    insertAtPosition(head, 2, 69);
+
+    cout << endl;
 
     traverse(head);
 
