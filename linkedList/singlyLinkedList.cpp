@@ -56,7 +56,22 @@ Node *deleteFromEnd(Node *head, Node *tail)
 
     head->next = NULL;
 
-    return head;
+    return head; // it is tail
+}
+
+void deleteAtPosition(Node *head, int pos)
+{
+    while (--pos)
+    {
+        if (head == NULL)
+        {
+            cout << "Out of range" << endl;
+            return;
+        }
+        head = head->next;
+    }
+
+    head->next = head->next->next;
 }
 
 void traverse(Node *head)
@@ -115,6 +130,10 @@ int main()
 
     cout << "Delete from End -" << endl;
     tail = deleteFromEnd(head, tail);
+    traverse(head);
+
+    cout << "Delete at Position -" << endl;
+    deleteAtPosition(head, 7);
     traverse(head);
 
     cout << endl;
