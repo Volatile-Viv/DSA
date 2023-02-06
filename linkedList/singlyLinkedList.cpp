@@ -40,6 +40,13 @@ void insertAtPosition(Node *head, int pos, int val)
     head->next = temp;
 }
 
+Node *deleteFromStart(Node *head)
+{
+    head = head->next;
+
+    return head;
+}
+
 void traverse(Node *head)
 {
     cout << "HEAD -> ";
@@ -48,7 +55,7 @@ void traverse(Node *head)
         cout << head->data << " -> ";
         head = head->next;
     }
-    cout << "NULL";
+    cout << "NULL" << endl;
 }
 
 int main()
@@ -82,16 +89,19 @@ int main()
 
     traverse(head);
 
-    cout << endl;
+    cout << "Insert at Head -" << endl;
+    insertAtHead(head, 420);
+    traverse(head);
 
+    cout << "Insert at Position -" << endl;
     insertAtPosition(head, 2, 69);
+    traverse(head);
 
-    cout << endl;
-
+    cout << "Delete from Head -" << endl;
+    head = deleteFromStart(head);
     traverse(head);
 
     cout << endl;
-
     cout << "HEAD -> " << head->data << endl;
     cout << "TAIL -> " << tail->data;
 }
