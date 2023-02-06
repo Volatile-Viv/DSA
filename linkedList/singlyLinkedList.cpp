@@ -133,7 +133,7 @@ int main()
     traverse(head);
 
     cout << "Delete at Position -" << endl;
-    deleteAtPosition(head, 7);
+    deleteAtPosition(head, 1);
     traverse(head);
 
     cout << endl;
