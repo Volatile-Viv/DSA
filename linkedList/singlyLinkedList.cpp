@@ -47,6 +47,18 @@ Node *deleteFromStart(Node *head)
     return head;
 }
 
+Node *deleteFromEnd(Node *head, Node *tail)
+{
+    while (head->next->next != NULL)
+    {
+        head = head->next;
+    }
+
+    head->next = NULL;
+
+    return head;
+}
+
 void traverse(Node *head)
 {
     cout << "HEAD -> ";
@@ -99,6 +111,10 @@ int main()
 
     cout << "Delete from Head -" << endl;
     head = deleteFromStart(head);
+    traverse(head);
+
+    cout << "Delete from End -" << endl;
+    tail = deleteFromEnd(head, tail);
     traverse(head);
 
     cout << endl;
