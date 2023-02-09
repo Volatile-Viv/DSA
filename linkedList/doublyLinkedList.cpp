@@ -24,6 +24,17 @@ Node *insertAtEnd(int val, Node *tail)
     return temp;
 }
 
+Node *insertAtStart(int val, Node *head)
+{
+    Node *temp = new Node();
+    temp->data = val;
+
+    temp->next = head;
+    head->prev = temp;
+
+    return temp;
+}
+
 void traverse(Node *head)
 {
     cout << "HEAD -> ";
@@ -73,8 +84,14 @@ int main()
     }
 
     traverse(head);
-    cout << "--------" << endl;
+    cout << "-------------------------------------" << endl;
     reverseTraverse(tail);
+
+    cout << "-------------------------------------" << endl;
+
+    cout << "Insert at Head -" << endl;
+    head = insertAtStart(69, head);
+    traverse(head);
 
     cout << endl
          << "HEAD --> " << head->data << endl
