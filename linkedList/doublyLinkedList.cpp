@@ -107,7 +107,7 @@ int main()
     head = insertAtStart(69, head);
     traverse(head);
 
-    cout << "Insert at Head -" << endl;
+    cout << "Insert at Position 3 -" << endl;
     insertAtPosition(420, 3, head);
     traverse(head);
 
