@@ -33,6 +33,14 @@ Node *pop(Node *head)
     return head;
 }
 
+bool empty(Node *head)
+{
+    if (head == NULL)
+        return 1;
+    else
+        return 0;
+}
+
 int main()
 {
     int n;
@@ -53,4 +61,6 @@ int main()
     cout << "After popping - " << endl;
     head = pop(head);
     traverse(head);
+
+    cout << "Is Empty - " << empty(head) << endl;
 }
