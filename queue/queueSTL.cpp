@@ -3,6 +3,16 @@
 
 using namespace std;
 
+void traverse(queue<int> k)
+{
+    while (!k.empty())
+    {
+        cout << k.front() << " ";
+        k.pop();
+    }
+    cout << endl;
+}
+
 int main()
 {
     int n;
@@ -16,12 +26,7 @@ int main()
         q.push(t);
     }
 
-    // traverse
-    //  for (int i = 0; i < n; i++)
-    //  {
-    //      cout << q.front() << " ";
-    //      q.pop();
-    //  }
+    traverse(q);
 
     cout << "First element - " << q.front() << endl;
 
@@ -30,4 +35,9 @@ int main()
     cout << "Is Empty - " << q.empty() << endl;
 
     cout << "Size - " << q.size() << endl;
+
+    cout << "Popped - " << endl;
+    q.pop();
+
+    traverse(q);
 }
