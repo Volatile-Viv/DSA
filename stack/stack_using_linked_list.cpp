@@ -41,6 +41,11 @@ bool empty(Node *head)
         return 0;
 }
 
+int top(Node *head)
+{
+    return head->data;
+}
+
 int main()
 {
     int n;
@@ -63,4 +68,5 @@ int main()
     traverse(head);
 
     cout << "Is Empty - " << empty(head) << endl;
+    cout << "Top - " << top(head) << endl;
 }
