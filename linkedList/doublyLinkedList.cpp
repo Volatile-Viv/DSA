@@ -9,10 +9,17 @@ public:
     Node *prev;
 };
 
-Node *insertAtEnd(int val)
+Node *insertAtEnd(int val, Node *tail)
 {
     Node *temp = new Node();
     temp->data = val;
+    temp->next = NULL;
+
+    if (tail != NULL)
+    {
+        tail->next = temp;
+        temp->prev = tail;
+    }
 
     return temp;
 }
@@ -56,14 +63,12 @@ int main()
 
         if (head == NULL)
         {
-            head = insertAtEnd(val);
+            head = insertAtEnd(val, tail);
             tail = head;
         }
         else
         {
-            tail->next = insertAtEnd(val);
-            tail->prev = tail->next;
-            tail = tail->next;
+            tail = insertAtEnd(val, tail);
         }
     }
 
@@ -72,6 +77,6 @@ int main()
     reverseTraverse(tail);
 
     cout << endl
-         << "HEAD --> " << head << endl
-         << "TAIL --> " << tail;
+         << "HEAD --> " << head->data << endl
+         << "TAIL --> " << tail->data;
 }
