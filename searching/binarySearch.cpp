@@ -22,7 +22,7 @@ int main()
 
     while (start <= end)
     {
-        mid = (start + end) / 2;
+        mid = start + (end - start) / 2; //(start + end) / 2;
 
         if (k == A[mid])
         {
