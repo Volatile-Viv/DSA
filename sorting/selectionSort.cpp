@@ -14,7 +14,20 @@ int main()
 
     // algo
 
-        // printing
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (A[j] < A[i])
+            {
+                int temp = A[j];
+                A[j] = A[i];
+                A[i] = temp;
+            }
+        }
+    }
+
+    // printing
 
     for (int i = 0; i < n; i++)
     {
