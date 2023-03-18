@@ -14,7 +14,7 @@ int main()
 
     // algo
 
-    // printing
+        // printing
 
     for (int i = 0; i < n; i++)
     {
